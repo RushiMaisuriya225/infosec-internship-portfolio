@@ -1,55 +1,60 @@
-<!-- ======================= vulnerabilities.html ======================= -->
-<a href="learned.html">Things Learned</a>
-<link rel="stylesheet" href="style.css">
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vulnerabilities | QAPCO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="brand">QAPCO • Information Security</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a class="active" href="vulnerabilities.html">Vulnerabilities</a>
+    <a href="phishing.html">Phishing Emails</a>
+    <a href="cypher.html">Cypher</a>
+    <a href="learned.html">Things Learned</a>
+  </div>
 </nav>
 
-
 <main class="container">
-<section class="card">
-<h1>Research Findings: Critical Vulnerabilities</h1>
-<p>Below is a breakdown of the specific security flaws I analyzed during my research into Qualys and Symantec tools.</p>
-</section>
+  <section class="card">
+    <h1>Research Findings: Critical Vulnerabilities</h1>
+    <p>Below is a breakdown of the specific security flaws I analyzed during my research into Qualys and Symantec tools.</p>
+  </section>
 
+  <section class="card">
+    <h2>1. Qualys (Vulnerability Management Platform)</h2>
 
-<section class="card">
-<h2>1. Qualys (Vulnerability Management Platform)</h2>
+    <h3>CVE-2025-43079: The "Unchecked Path" Flaw</h3>
+    <p><strong>What it is:</strong> The software’s uninstallation script was careless about where it looked for system commands. It’s like a delivery driver accepting a package from a stranger on the street instead of going to the warehouse.</p>
+    <p><strong>The Damage:</strong> A hacker with low-level access can trick the system into running their malicious code, instantly gaining "Root" (Super-Admin) privileges and total control over the server.</p>
 
+    <h3>CVE-2023-28140: Windows DLL Hijacking</h3>
+    <p><strong>What it is:</strong> On Windows computers, the Qualys agent looked for helper files (DLLs) in an unsafe order. I found that an attacker could plant a fake, virus-laden file that the agent would pick up by mistake.</p>
+    <p><strong>The Damage:</strong> The malicious file runs with "System" privileges, allowing an attacker to install backdoors or steal data without being detected.</p>
 
-<h3>CVE-2025-43079: The "Unchecked Path" Flaw</h3>
-<p><strong>What it is:</strong> The software’s uninstallation script was careless about where it looked for system commands. It’s like a delivery driver accepting a package from a stranger on the street instead of going to the warehouse.</p>
-<p><strong>The Damage:</strong> A hacker with low-level access can trick the system into running their malicious code, instantly gaining "Root" (Super-Admin) privileges and total control over the server.</p>
+    <h3>CVE-2023-6147 & CVE-2023-6149: Jenkins Plugin Weakness</h3>
+    <p><strong>What it is:</strong> The plugins connecting Qualys to Jenkins (a software building tool) failed to filter incoming data properly. They accepted "confusing" XML files that they shouldn't have.</p>
+    <p><strong>The Damage:</strong> Attackers could trick the server into revealing secret files, passwords, or internal network details.</p>
+  </section>
 
+  <section class="card">
+    <h2>2. Symantec (Data Loss Prevention - DLP)</h2>
 
-<h3>CVE-2023-28140: Windows DLL Hijacking</h3>
-<p><strong>What it is:</strong> On Windows computers, the Qualys agent looked for helper files (DLLs) in an unsafe order. I found that an attacker could plant a fake, virus-laden file that the agent would pick up by mistake.</p>
-<p><strong>The Damage:</strong> The malicious file runs with "System" privileges, allowing an attacker to install backdoors or steal data without being detected.</p>
+    <h3>CVE-2024-23617: Critical Buffer Overflow</h3>
+    <p><strong>What it is:</strong> This is a flaw where the system tries to read a document that is deliberately "too big" for its memory. Imagine pouring a gallon of water into a cup; the spill goes everywhere. In software, this "spill" allows a hacker to overwrite the system's instructions.</p>
+    <p><strong>The Damage:</strong> A hacker can take full control of the DLP server—the very machine meant to protect data. They could then turn off security rules, delete logs to hide their tracks, and steal the sensitive data of millions of users.</p>
 
-
-<h3>CVE-2023-6147 & CVE-2023-6149: Jenkins Plugin Weakness</h3>
-<p><strong>What it is:</strong> The plugins connecting Qualys to Jenkins (a software building tool) failed to filter incoming data properly. They accepted "confusing" XML files that they shouldn't have.</p>
-<p><strong>The Damage:</strong> Attackers could trick the server into revealing secret files, passwords, or internal network details.</p>
-</section>
-
-
-<section class="card">
-<h2>2. Symantec (Data Loss Prevention - DLP)</h2>
-
-
-<h3>CVE-2024-23617: Critical Buffer Overflow</h3>
-<p><strong>What it is:</strong> This is a flaw where the system tries to read a document that is deliberately "too big" for its memory. Imagine pouring a gallon of water into a cup; the spill goes everywhere. In software, this "spill" allows a hacker to overwrite the system's instructions.</p>
-<p><strong>The Damage:</strong> A hacker can take full control of the DLP server—the very machine meant to protect data. They could then turn off security rules, delete logs to hide their tracks, and steal the sensitive data of millions of users.</p>
-
-
-<h3>OpenSSL "False Alarms" (Research Finding)</h3>
-<p><strong>What it is:</strong> Security scanners flagged 8 different "Critical" issues with the encryption technology (OpenSSL) used inside Symantec agents.</p>
-<p><strong>The Outcome:</strong> My research proved these were false positives. The software contained the vulnerable code but never actually used it. This finding saved the IT team from wasting weeks on unnecessary updates.</p>
-</section>
+    <h3>OpenSSL "False Alarms" (Research Finding)</h3>
+    <p><strong>What it is:</strong> Security scanners flagged 8 different "Critical" issues with the encryption technology (OpenSSL) used inside Symantec agents.</p>
+    <p><strong>The Outcome:</strong> My research proved these were false positives. The software contained the vulnerable code but never actually used it. This finding saved the IT team from wasting weeks on unnecessary updates.</p>
+  </section>
 </main>
 
-
-<footer><p>© 2025 Rushi Maisuriya</p></footer>
+<footer>
+  <p>© 2025 Rushi Maisuriya</p>
+</footer>
 </body>
 </html>
-
-
