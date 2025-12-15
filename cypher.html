@@ -1,67 +1,75 @@
-<!-- ======================= cypher.html ======================= -->
-<a href="index.html">Home</a>
-<a href="vulnerabilities.html">Vulnerabilities</a>
-<a href="phishing.html">Phishing Emails</a>
-<a href="cypher.html" class="active">Cypher</a>
-<a href="learned.html">Things Learned</a>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cypher | QAPCO</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="brand">QAPCO • Information Security</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="vulnerabilities.html">Vulnerabilities</a>
+    <a href="phishing.html">Phishing Emails</a>
+    <a class="active" href="cypher.html">Cypher</a>
+    <a href="learned.html">Things Learned</a>
+  </div>
 </nav>
 
-
 <main class="container">
-<section class="card">
-<h1>The Musical Cypher Project</h1>
-<p>During my internship, I developed a custom encryption algorithm designed for secure, high-level executive communication. The goal was to create a unique method for the CEO to transmit messages exclusively to department heads (IT, Finance, Operations, HR) in a format that appears indistinguishable from random data—or in this case, music.</p>
-</section>
+  <section class="card">
+    <h1>The Musical Cypher Project</h1>
+    <p>During my internship, I developed a custom encryption algorithm designed for secure, high-level executive communication. The goal was to create a unique method for the CEO to transmit messages exclusively to department heads (IT, Finance, Operations, HR) in a format that appears indistinguishable from random data—or in this case, music.</p>
+  </section>
 
+  <section class="card">
+    <h2>How It Works</h2>
+    <p>The cypher transforms text into a musical sequence, adding layers of mathematical obfuscation that require specific "role" and "department" keys to decode. This ensures that a message intended for the CIO cannot be read by the CFO, even if they intercepted it.</p>
+  </section>
 
-<section class="card">
-<h2>How It Works</h2>
-<p>The cypher transforms text into a musical sequence, adding layers of mathematical obfuscation that require specific "role" and "department" keys to decode. This ensures that a message intended for the CIO cannot be read by the CFO, even if they intercepted it.</p>
-</section>
+  <section class="card">
+    <h2>The Encryption Process</h2>
+    <ol>
+      <li><strong>Text to Number:</strong> The message is first converted from standard text alphabets into ASCII decimal codes.</li>
+      <li><strong>Role Multiplication:</strong> The decimal is multiplied by a secret Role Code unique to the specific recipient (e.g., the Chief Information Officer).</li>
+      <li><strong>Department Salting:</strong> A confidential Department Number is added to the result. This acts as a "salt," ensuring the math is specific to one division (like IT or Finance).</li>
+      <li><strong>Binary Conversion:</strong> The final calculated number is converted into binary code (0s and 1s).</li>
+      <li><strong>Musical Mapping:</strong> The binary code is mapped to piano keys. For example, a "0" might represent a white key and a "1" a black key, turning the confidential message into a playable melody.</li>
+    </ol>
+  </section>
 
-
-<section class="card">
-<h2>The Encryption Process</h2>
-<ol>
-<li><strong>Text to Number:</strong> The message is first converted from standard text alphabets into ASCII decimal codes.</li>
-<li><strong>Role Multiplication:</strong> The decimal is multiplied by a secret Role Code unique to the specific recipient (e.g., the Chief Information Officer).</li>
-<li><strong>Department Salting:</strong> A confidential Department Number is added to the result. This acts as a "salt," ensuring the math is specific to one division (like IT or Finance).</li>
-<li><strong>Binary Conversion:</strong> The final calculated number is converted into binary code (0s and 1s).</li>
-<li><strong>Musical Mapping:</strong> The binary code is mapped to piano keys. For example, a "0" might represent a white key and a "1" a black key, turning the confidential message into a playable melody.</li>
-</ol>
-</section>
-
-
-<section class="card">
-<h2>The Master Key Configuration</h2>
-<pre>{
-"encoding": "ASCII-8",
-"byte_order": "big-endian",
-"roles": {
-"IT_CIO": 1564,
-"FIN_CFO": 1897,
-"OPS_COO": 1729,
-"HR_CHRO": 1643
-},
-"departments": {
-"IT": 1003,
-"FIN": 359,
-"OPS": 811,
-"HR": 427
-},
-"math_rule": "Encrypted = (N × Role_Code) + Department_Code",
-"piano_mapping": {
-"start": "C4",
-"direction": "up",
-"bit_0": "white",
-"bit_1": "black"
-}
+  <section class="card">
+    <h2>The Master Key Configuration</h2>
+    <pre>{
+  "encoding": "ASCII-8",
+  "byte_order": "big-endian",
+  "roles": {
+    "IT_CIO": 1564,
+    "FIN_CFO": 1897,
+    "OPS_COO": 1729,
+    "HR_CHRO": 1643
+  },
+  "departments": {
+    "IT": 1003,
+    "FIN": 359,
+    "OPS": 811,
+    "HR": 427
+  },
+  "math_rule": "Encrypted = (N × Role_Code) + Department_Code",
+  "piano_mapping": {
+    "start": "C4",
+    "direction": "up",
+    "bit_0": "white",
+    "bit_1": "black"
+  }
 }</pre>
-</section>
+  </section>
 </main>
 
-
-<footer><p>© 2025 Rushi Maisuriya</p></footer>
+<footer>
+  <p>© 2025 Rushi Maisuriya</p>
+</footer>
 </body>
 </html>
