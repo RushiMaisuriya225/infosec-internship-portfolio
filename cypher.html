@@ -1,28 +1,40 @@
 <!-- ======================= cypher.html ======================= -->
+<a href="index.html">Home</a>
+<a href="vulnerabilities.html">Vulnerabilities</a>
+<a href="phishing.html">Phishing Emails</a>
+<a href="cypher.html" class="active">Cypher</a>
+<a href="learned.html">Things Learned</a>
+</div>
 </nav>
 
 
 <main class="container">
 <section class="card">
 <h1>The Musical Cypher Project</h1>
-<p>A role-based encryption system converting text into musical sequences.</p>
+<p>During my internship, I developed a custom encryption algorithm designed for secure, high-level executive communication. The goal was to create a unique method for the CEO to transmit messages exclusively to department heads (IT, Finance, Operations, HR) in a format that appears indistinguishable from random data—or in this case, music.</p>
 </section>
 
 
 <section class="card">
-<h2>Encryption Process</h2>
+<h2>How It Works</h2>
+<p>The cypher transforms text into a musical sequence, adding layers of mathematical obfuscation that require specific "role" and "department" keys to decode. This ensures that a message intended for the CIO cannot be read by the CFO, even if they intercepted it.</p>
+</section>
+
+
+<section class="card">
+<h2>The Encryption Process</h2>
 <ol>
-<li>ASCII Conversion</li>
-<li>Role-Based Multiplication</li>
-<li>Department Salting</li>
-<li>Binary Encoding</li>
-<li>Piano Key Mapping</li>
+<li><strong>Text to Number:</strong> The message is first converted from standard text alphabets into ASCII decimal codes.</li>
+<li><strong>Role Multiplication:</strong> The decimal is multiplied by a secret Role Code unique to the specific recipient (e.g., the Chief Information Officer).</li>
+<li><strong>Department Salting:</strong> A confidential Department Number is added to the result. This acts as a "salt," ensuring the math is specific to one division (like IT or Finance).</li>
+<li><strong>Binary Conversion:</strong> The final calculated number is converted into binary code (0s and 1s).</li>
+<li><strong>Musical Mapping:</strong> The binary code is mapped to piano keys. For example, a "0" might represent a white key and a "1" a black key, turning the confidential message into a playable melody.</li>
 </ol>
 </section>
 
 
 <section class="card">
-<h2>Master Cypher Key</h2>
+<h2>The Master Key Configuration</h2>
 <pre>{
 "encoding": "ASCII-8",
 "byte_order": "big-endian",
