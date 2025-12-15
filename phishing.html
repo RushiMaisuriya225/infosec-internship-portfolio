@@ -1,62 +1,57 @@
-<!-- ======================= phishing.html ======================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Phishing Emails</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Emails | QAPCO</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="navbar">
-<div class="brand">QAPCO • Information Security</div>
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="vulnerabilities.html">Vulnerabilities</a>
-<a href="phishing.html" class="active">Phishing Emails</a>
-<a href="cypher.html">Cypher</a>
-<a href="learned.html">Things Learned</a>
-</div>
+  <div class="brand">QAPCO • Information Security</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="vulnerabilities.html">Vulnerabilities</a>
+    <a class="active" href="phishing.html">Phishing Emails</a>
+    <a href="cypher.html">Cypher</a>
+    <a href="learned.html">Things Learned</a>
+  </div>
 </nav>
 
-
 <main class="container">
-<section class="card">
-<h1>Social Engineering Simulation: Phishing</h1>
-<p>As part of my training in defensive security, I was tasked with creating a realistic phishing simulation to understand how attackers exploit human trust. I developed a high-fidelity clone of an official correspondence from the major e-commerce platform AliExpress.</p>
-</section>
+  <section class="card">
+    <h1>Social Engineering Simulation: Phishing</h1>
+    <p>As part of my training in defensive security, I was tasked with creating a realistic phishing simulation to understand how attackers exploit human trust. I developed a high-fidelity clone of an official correspondence from the major e-commerce platform AliExpress.</p>
+  </section>
 
+  <section class="card warning">
+    <h2>⚠ Disclaimer</h2>
+    <p>The phishing emails displayed on this page were created strictly for cybersecurity awareness training and defensive security education. They were never deployed in real-world attacks and are presented solely to demonstrate how social engineering techniques operate.</p>
+  </section>
 
-<section class="card warning">
-<h2>⚠ Disclaimer</h2>
-<p>The phishing emails displayed on this page were created strictly for cybersecurity awareness training and defensive security education. They were never deployed in real-world attacks and are presented solely to demonstrate how social engineering techniques operate.</p>
-</section>
+  <section class="card">
+    <h2>The Simulation Scenario</h2>
+    <ul>
+      <li><strong>The Hook:</strong> The email subject line—"Suspicious Activity Detected – Order On Hold"—is designed to trigger immediate urgency and concern in the recipient.</li>
+      <li><strong>The Lure:</strong> The body copy informs the user that their recent order has been paused due to "unusual activity," a common tactic used to bypass a victim's logical analysis.</li>
+      <li><strong>The Trap:</strong> To "resolve" the issue, the user is instructed to click a verification link. While the email mimics the visual identity of AliExpress perfectly, the link directs the user to a malicious external site (www.maliciouslink.com) rather than the official domain.</li>
+    </ul>
+  </section>
 
+  <section class="card">
+    <h2>Why This Matters</h2>
+    <p>This exercise demonstrates Brand Impersonation. By replicating the exact logo, fonts, and professional tone of a trusted company, attackers can trick even cautious users into revealing credentials or installing malware.</p>
+  </section>
 
-<section class="card">
-<h2>The Simulation Scenario</h2>
-<ul>
-<li><strong>The Hook:</strong> The email subject line—"Suspicious Activity Detected – Order On Hold"—is designed to trigger immediate urgency and concern in the recipient.</li>
-<li><strong>The Lure:</strong> The body copy informs the user that their recent order has been paused due to "unusual activity," a common tactic used to bypass a victim's logical analysis.</li>
-<li><strong>The Trap:</strong> To "resolve" the issue, the user is instructed to click a verification link. While the email mimics the visual identity of AliExpress perfectly, the link directs the user to a malicious external site (www.maliciouslink.com) rather than the official domain.</li>
-</ul>
-</section>
-
-
-<section class="card">
-<h2>Why This Matters</h2>
-<p>This exercise demonstrates Brand Impersonation. By replicating the exact logo, fonts, and professional tone of a trusted company, attackers can trick even cautious users into revealing credentials or installing malware.</p>
-</section>
-
-
-<section class="card">
-<h2>Phishing Email Examples Created During Simulation</h2>
-<img src="Screenshot (24).png" alt="Phishing Email Example 1" />
-<img src="Screenshot (25).png" alt="Phishing Email Example 2" />
-</section>
+  <section class="card">
+    <h2>Phishing Email Examples Created During Simulation</h2>
+    <img src="Screenshot (24).png" alt="Phishing Email Example 1">
+    <img src="Screenshot (25).png" alt="Phishing Email Example 2">
+  </section>
 </main>
 
-
-<footer><p>© 2025 Rushi Maisuriya</p></footer>
+<footer>
+  <p>© 2025 Rushi Maisuriya</p>
+</footer>
 </body>
 </html>
